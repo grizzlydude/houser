@@ -5,6 +5,7 @@ import { HashRouter, Route, Link, Switch } from 'react-router-dom'
 import Dashboard from './components/Dashboard/Dashboard';
 import Wizard from './components/Wizard/Wizard';
 import axios from 'axios'
+import Routes from './components/routes/Routes'
 
 function App() {
   return (
@@ -13,10 +14,11 @@ function App() {
         <header>
           <Header />
         </header>
-       <Switch>
+        {/* <Switch>
          <Route exact path='/' component = {Dashboard}/>
          <Route path='/wizard' component ={Wizard}/>
-       </Switch>
+       </Switch> */}
+        <Routes />
       </div>
     </HashRouter>
   );

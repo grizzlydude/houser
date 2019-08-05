@@ -1,4 +1,3 @@
-
 module.exports = {
     addHouse: async (req, res) => {
         const { property_name, the_address, city, the_state, zip } = req.body
@@ -9,10 +8,14 @@ module.exports = {
     getAll: async (req, res) => {
         let db = req.app.get('db')
         let house = await db.get_houses()
-        // console.log(house)
         res.status(200).send(house)
     },
-    removeHouse: (req, res) => {
-        res.sendStatus(200)
+    removeHouse: async (req, res) => {
+        const { id } = req.params
+        console.log('id: ', id)
+        let db = req.app.get('db')
+        let house = await db.houser.destroy({id})
+        console.log(house)
+        res.status(200).send(house)
     }
 }

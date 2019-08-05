@@ -26,16 +26,21 @@ export default class Dashboard extends Component {
     render() {
         return (
             <div>
-                {this.state.houses.map(house => {
-                    return (
-                        <div>
-                            <House house={house} />
-                        </div>
-                    )
-                })}
-                <Link to='/wizard'>
-                    <button>Add a House</button>
-                </Link>
+                <header>
+                        <h1>Dashboard</h1>
+                    <Link to='/wizard'>
+                        <button>Add a House</button>
+                    </Link>
+                </header>
+                <div>
+                    {this.state.houses.map(house => {
+                        return (
+                            <div>
+                                <House house={house} />
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
         )
     }
