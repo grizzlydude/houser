@@ -15,33 +15,40 @@ export default class Dashboard extends Component {
     }
 
 
-    componentDidMount() {
-        axios.get('/api/house').then(res => {
-            this.setState({
-                houses: res.data
-            })
+    // store.subsribe(componentDidMount({
+    //     axios.get('/api/house').then(res => {
+    //         this.setState({
+    //             houses: res.data
+    //         })
+    //     })
+    // }))
+componentDidMount() {
+    axios.get('/api/house').then(res => {
+        this.setState({
+            houses: res.data
         })
-    }
-
-    render() {
-        return (
-            <div>
-                <header>
-                        <h1>Dashboard</h1>
-                    <Link to='/wizard'>
-                        <button>Add a House</button>
-                    </Link>
-                </header>
-                <div>
-                    {this.state.houses.map(house => {
-                        return (
-                            <div>
-                                <House house={house} />
-                            </div>
-                        )
-                    })}
-                </div>
-            </div>
-        )
-    }
+    })
 }
+
+render() {
+    return (
+        <div>
+            <header>
+                <h1>Dashboard</h1>
+                <Link to='/wizard/step1'>
+                    <button>Add New Property</button>
+                </Link>
+            </header>
+            <div>
+                {this.state.houses.map(house => {
+                    return (
+                        <div>
+                            <House house={house} />
+                        </div>
+                    )
+                })}
+            </div>
+        </div>
+    )
+}
+    }

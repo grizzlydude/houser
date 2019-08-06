@@ -1,62 +1,22 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import store, { ADDING_HOUSE } from '../redux/store'
+import { Switch, Route } from 'react-router-dom'
 import axios from 'axios'
+import StepOne from './StepOne'
+// import StepTwo from './StepTwo'
+// import StepThree from './StepThree'
 
 export default class Wizard extends Component {
-    constructor() {
-        super()
-        this.state = {
-            property_name: '',
-            the_address: '',
-            city: '',
-            the_state: '',
-            zip: 0
-        }
-        this.clear = this.clear.bind(this)
-    }
-f
-    handleChange = (e) => {
-        [e.target.name] = e.target.value
-    }
-
-    submit = () => {
-        store.dispatch({
-            type: ADDING_HOUSE,
-            payload: this.state
-        })
-        let reduxState = store.getState()
-        console.log(reduxState)
-        axios.post('/api/house', reduxState).catch(err => alert(err))
-    }
-    
-    clear = () => {
-        this.setState({
-            property_name: '',
-            the_address: '',
-            city: '',
-            the_state: '',
-            zip: 0
-        })
-    }
-
     render() {
         return (
-            <div>
-                <h1>ADDING A HOUSE</h1>
-                <span>House Name:<input onChange={e => this.handleChange(e)} name="itemName" type="text" /></span>
-                <span>Address<input onChange={e => this.handleChange(e)} name="category" type="text" /></span>
-                <span>City<input onChange={e => this.handleChange(e)} name="category" type="text" /></span>
-                <span>State<input onChange={e => this.handleChange(e)} name="category" type="text" /></span>
-                <span>Zip<input onChange={e => this.handleChange(e)} name="category" type="text" /></span>
-            <Link to='/'>
-                <button onClick={this.submit}>Submit</button>
-            </Link>
-            <Link to='/'>
-                <button>Cancel</button>
-            </Link>
-            <button onClick={this.clear}>Clear</button>
-            </div >
+            <div className='Wizard'>
+                <h1>Add New Listing</h1>
+                <Switch>
+                    <Route exact path='wizard/step1' component={StepOne} />
+                    {/* <Route path='wizard/step2' component={StepTwo} />
+                    <Route path='wizard/step3' component={StepThree} /> */}
+                </Switch>
+            </div>
         )
     }
 }
+

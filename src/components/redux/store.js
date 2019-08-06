@@ -8,12 +8,18 @@ const initialState = {
     zip: 0
 }
 
-export const ADDING_HOUSE = 'ADDING_HOUSE'
+export const STEP_ONE = 'STEP_ONE'
+export const STEP_TWO = 'STEP_TWO'
+export const STEP_THREE = 'STEP_THREE'
 
-function reducer(state = initialState, action){
-    switch(action.type){
-        case ADDING_HOUSE:
-            return {...state, ...action.payload}
+function reducer(state = initialState, action) {
+    switch (action.type) {
+        case STEP_ONE:
+            return { ...state, ...action.payload }
+        case STEP_TWO:
+            return { ...state, ...action.payload }
+        case STEP_THREE:
+            return { ...state, ...action.payload }
         default:
             return state
     }
