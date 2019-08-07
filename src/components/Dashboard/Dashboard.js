@@ -7,21 +7,13 @@ import store from '../redux/store'
 export default class Dashboard extends Component {
     constructor() {
         super()
-        const reduxState = store.getState()
+        // const reduxState = store.getState()
         this.state = {
             houses: [],
             houseIndex: 0
         }
     }
 
-
-    // store.subsribe(componentDidMount({
-    //     axios.get('/api/house').then(res => {
-    //         this.setState({
-    //             houses: res.data
-    //         })
-    //     })
-    // }))
 componentDidMount() {
     axios.get('/api/house').then(res => {
         this.setState({

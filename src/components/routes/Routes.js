@@ -4,7 +4,7 @@ import Dashboard from '../Dashboard/Dashboard'
 // import Wizard from './components/Wizard/Wizard'
 import StepOne from '../Wizard/StepOne'
 import StepTwo from '../Wizard/StepTwo'
-// import StepThree from '../Wizard/StepThree'
+import StepThree from '../Wizard/StepThree'
 
 
 export default class Routes extends Component {
@@ -20,9 +20,9 @@ export default class Routes extends Component {
                 <Switch>
                     <Route path='/wizard/step2' component={StepTwo} />
                 </Switch>
-                {/* <Switch>
+                <Switch>
                     <Route path='/wizard/step3' component={StepThree} />
-                </Switch>  */}
+                </Switch> 
             </div>
         )
     }

@@ -5,7 +5,10 @@ const initialState = {
     the_address: '',
     city: '',
     the_state: '',
-    zip: 0
+    zip: 0,
+    image: '',
+    morgage: 0,
+    rent: 0
 }
 
 export const STEP_ONE = 'STEP_ONE'

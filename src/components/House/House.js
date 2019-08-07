@@ -12,7 +12,11 @@ export default class House extends Component {
                 <h4>Zipcode: {this.props.house.zip}</h4>
                 <h4>Morgage: {this.props.house.morgage}</h4>
                 <h4>Rent: {this.props.house.rent}</h4>
+                <div>
+                    <button>Delete</button>
+                </div>
             </div>
+
         )
     }
 }

@@ -5,7 +5,10 @@ CREATE TABLE houser (
   the_address VARCHAR(200),
   city VARCHAR(200),
   the_state VARCHAR(200),
-  zip INTEGER
+  zip INTEGER,
+  image TEXT,
+  morgage NUMERIC,
+  rent NUMERIC
 )
 
 -- dummy data
