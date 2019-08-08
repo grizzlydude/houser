@@ -1,8 +1,9 @@
 module.exports = {
     addHouse: async (req, res) => {
-        const { property_name, the_address, city, the_state, zip, image, morgage, rent } = req.body
+        console.log(req.body)
+        const { property_name, the_address, city, the_state, zip, image, mortgage, rent } = req.body
         let db = req.app.get('db')
-        let house = await db.add_house([property_name, the_address, city, the_state, zip, image, morgage, rent])
+        let house = await db.add_house([property_name, the_address, city, the_state, zip, image, mortgage, rent])
         res.status(201).send(house)
     },
     getAll: async (req, res) => {

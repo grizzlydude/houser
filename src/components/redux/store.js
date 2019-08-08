@@ -7,7 +7,7 @@ const initialState = {
     the_state: '',
     zip: 0,
     image: '',
-    morgage: 0,
+    mortgage: 0,
     rent: 0
 }
 

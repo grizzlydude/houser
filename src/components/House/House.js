@@ -1,8 +1,14 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
 export default class House extends Component {
+
+    delete(id) {
+        axios.delete(`/api/house/${id}`)
+    }
+    
     render() {
-        return(
+        return (
             <div>
                 <img src={this.props.house.image} />
                 <h4>Property Name: {this.props.house.property_name}</h4>
@@ -13,10 +19,9 @@ export default class House extends Component {
                 <h4>Morgage: {this.props.house.morgage}</h4>
                 <h4>Rent: {this.props.house.rent}</h4>
                 <div>
-                    <button>Delete</button>
+                    <button onClick={() => {this.delete(this.props.house.id)}}>Delete</button>
                 </div>
             </div>
-
         )
     }
 }

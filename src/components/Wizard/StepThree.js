@@ -8,7 +8,7 @@ class StepThree extends Component {
         super()
         let reduxState = store.getState()
         this.state = {
-            morgage: 0,
+            mortgage: 0,
             rent: 0
         }
     }
@@ -17,7 +17,7 @@ class StepThree extends Component {
         store.subscribe(() => {
             const reduxState = store.getState()
             this.setState({
-                morgage: reduxState.morgage,
+                mortgage: reduxState.morgage,
                 rent: reduxState.morgage
             })
         })
@@ -35,7 +35,7 @@ class StepThree extends Component {
             payload: this.state
         })
         let reduxState = store.getState()
-        console.log(reduxState)
+        console.log('hit: ', reduxState)
         axios.post('/api/house', reduxState).catch(err => alert(err))
     }
 

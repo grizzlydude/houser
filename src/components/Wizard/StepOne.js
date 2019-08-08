@@ -44,7 +44,6 @@ class StepOne extends Component {
         })
         let reduxState = store.getState()
         console.log(reduxState)
-        axios.post('/api/house', reduxState).catch(err => alert(err))
     }
 
     clear = () => {
